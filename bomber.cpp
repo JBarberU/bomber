@@ -1,8 +1,9 @@
 #pragma once
+#include "stdafx.h"
 #include "Game.h"
 
-int main(int argc, _TCHAR* argv [])
+int main(int argc)
 {
-    Game::start();
+    Game::Start();
     return 0;
 }
