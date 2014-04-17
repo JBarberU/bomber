@@ -6,7 +6,7 @@ void Game::Start(void)
     if(m_gameState != Uninitialized)
         return;
 
-    m_mainWindow.Create(sf::VideoMode(1024, 768, 32), "Pang!");
+    m_mainWindow.create(sf::VideoMode(1024, 768, 32), "Pang!");
     m_gameState = Game::Playing;
 
     while(!IsExiting())
@@ -14,7 +14,7 @@ void Game::Start(void)
         GameLoop();
     }
 
-    m_mainWindow.Close();
+    m_mainWindow.close();
 }
 
 bool Game::IsExiting()
@@ -25,14 +25,15 @@ bool Game::IsExiting()
 void Game::GameLoop()
 {
     sf::Event currentEvent;
-    while(m_mainWindow.GetEvent(currentEvent))
+    while(m_mainWindow.pollEvent(currentEvent))
     {
        switch(m_gameState)
+       {
             case Game::Playing:
-                m_mainWindow.Clear(sf::Color(255, 0, 0));
-                m_mainWindow.Display();
+                m_mainWindow.clear(sf::Color(255, 0, 0));
+                m_mainWindow.display();
 
-                if(currentEvent.Type == sf::Event::Closed)
+                if(currentEvent.type == sf::Event::Closed)
                 {
                     m_gameState = Game::Exiting;
                 }
