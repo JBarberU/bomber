@@ -7,12 +7,9 @@
 
 ## Compilation
 
-```
+```bash
 mkdir build && cd build
 cmake ..
-make # use -j N, to compile on N number of threads
+make
 ./src/bomber
 ```
-
-
-
