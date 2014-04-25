@@ -17,7 +17,7 @@ void Game::Start(void)
         GameLoop();
     }
 
-    m_mainWindow.Close();
+    m_mainWindow.close();
 }
 
 bool Game::IsExiting()
@@ -54,7 +54,7 @@ void Game::GameLoop()
 
                 if(currentEvent.type == sf::Event::KeyPressed)
                 {
-                    if(currentEvent.Key.Code == sf::Key::Escape) 
+                    if(currentEvent.key.code == sf::Keyboard::Escape) 
                     {
                         ShowMenu();
                     }

@@ -3,11 +3,15 @@ find_package(SFML REQUIRED COMPONENTS graphics window system)
 set(SRC
 main.cpp
 Game.cpp
+SplashScreen.cpp
+mainMenu.cpp
 )
 
 set(HEADERS
 Game.h
 stdafx.h
+mainMenu.h
+SplashScreen.h
 )
 
 include_directories(${CMAKE_SOURCE_DIR})

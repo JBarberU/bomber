@@ -3,7 +3,7 @@
 
 MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window)
 {
-    sf::Image image;
+    sf::Texture image;
     image.loadFromFile("res/images/mainmenu.png");
     sf::Sprite sprite(image);
 
@@ -12,14 +12,14 @@ MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window)
     playButton.rect.left = 0;
     playButton.rect.height = 235;
     playButton.rect.width = 1023;
-    playButton.rect.action = Play;
+    playButton.action = Play;
 
     MenuItem exitButton;
     exitButton.rect.left = 0;
     exitButton.rect.width = 1023;
     exitButton.rect.top = 383;
     exitButton.rect.height = 177;
-    exitButton.rect. = Exit;
+    exitButton.action = Exit;
 
     m_menuItems.push_back(playButton);
     m_menuItems.push_back(exitButton);
@@ -27,10 +27,10 @@ MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window)
     window.draw(sprite);
     window.display();
 
-    return GetMenuResponse(window);
+    return getMenuResponse(window);
 }
 
-MainMenu::MenuResult MainMenu::HandleClick(int x, int y)
+MainMenu::MenuResult MainMenu::handleClick(int x, int y)
 {
     std::list<MenuItem>::iterator it;
 
@@ -52,11 +52,11 @@ MainMenu::MenuResult MainMenu::getMenuResponse(sf::RenderWindow &window)
 
     while(true)
     {
-        while(window.pollEvent(event))
+        while(window.pollEvent(menuEvent))
         {
             if(menuEvent.type == sf::Event::MouseButtonPressed)
             {
-                return HandleClick(menuEvent.MouseButton.X, menuEvent.MouseButton.Y)
+                return handleClick(menuEvent.mouseButton.x, menuEvent.mouseButton.y);
             }
             if(menuEvent.type == sf::Event::Closed)
             {
