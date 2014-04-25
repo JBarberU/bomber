@@ -4,7 +4,7 @@
 void SplashScreen::show(sf::RenderWindow &renderWindow)
 {
     sf::Texture image;
-    if(image.loadFromFile("res/images/SplashScreen.png") != true)
+    if(image.loadFromFile("../res/images/splashscreen.png") != true)
     {
         return;
     }
