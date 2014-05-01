@@ -4,13 +4,13 @@ set(SRC
 main.cpp
 Game.cpp
 SplashScreen.cpp
-mainMenu.cpp
+MainMenu.cpp
 )
 
 set(HEADERS
 Game.h
 stdafx.h
-mainMenu.h
+MainMenu.h
 SplashScreen.h
 )
 

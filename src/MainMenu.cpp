@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "mainMenu.h"
+#include "MainMenu.h"
 
 MainMenu::MenuResult MainMenu::show(sf::RenderWindow &window)
 {
     sf::Texture image;
-    image.loadFromFile("../res/images/mainmenu.png");
+    image.loadFromFile("../res/images/Mainmenu.png");
     sf::Sprite sprite(image);
 
     MenuItem playButton;
